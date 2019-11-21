@@ -1,0 +1,30 @@
+<!-- 是陣列 -->
+<ng-container *ngIf="isArray;else isObject">
+  <div
+    class="item"
+    *ngFor="let item of dataList;let i = index"
+  >
+    <app-item
+      [text]="getArrayText(item,i)"
+      [hasSub]="hasSub(item)"
+      [tabWidth]="tabWidth"
+      [subData]="item"
+    >
+    </app-item>
+  </div>
+</ng-container>
+<!-- 是物件 -->
+<ng-template #isObject>
+  <div
+    class="item"
+    *ngFor="let dataKey of dataList;let num = index"
+  >
+    <app-item
+      [text]="getObjectText(dataKey)"
+      [hasSub]="objectItemHasSub(dataKey)"
+      [tabWidth]="tabWidth"
+      [subData]="json[dataKey]"
+    >
+    </app-item>
+  </div>
+</ng-template>

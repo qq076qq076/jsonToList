@@ -1,0 +1,22 @@
+<div
+  class="item"
+  (click)="toggleOpen()"
+>
+  <div
+    class="arrow"
+    [ngClass]="{active: openSub}"
+    *ngIf="hasSub"
+  ></div>
+  {{text}}
+</div>
+<div
+  class="container"
+  *ngIf="subData && openSub"
+  [ngStyle]="{'padding-left': tabWidth}"
+>
+  <app-json-to-list
+    [json]="subData"
+    [tabWidth]="tabWidth"
+  >
+  </app-json-to-list>
+</div>
