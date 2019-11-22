@@ -5,7 +5,10 @@
     *ngFor="let item of dataList;let i = index"
   >
     <app-item
+      [title]="i"
+      [titleColor]="titleColor"
       [text]="getArrayText(item,i)"
+      [textColor]="textColor"
       [hasSub]="hasSub(item)"
       [tabWidth]="tabWidth"
       [subData]="item"
@@ -20,7 +23,10 @@
     *ngFor="let dataKey of dataList;let num = index"
   >
     <app-item
+      [title]="dataKey"
+      [titleColor]="titleColor"
       [text]="getObjectText(dataKey)"
+      [textColor]="textColor"
       [hasSub]="objectItemHasSub(dataKey)"
       [tabWidth]="tabWidth"
       [subData]="json[dataKey]"

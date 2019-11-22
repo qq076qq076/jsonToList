@@ -11,6 +11,8 @@ export class JsonToListComponent implements OnInit {
   constructor() { }
   @Input() json: any;
   @Input() tabWidth = '15px';
+  @Input() titleColor: string;
+  @Input() textColor: string;
   isArray = false;
   dataList: any[];
 
@@ -36,9 +38,9 @@ export class JsonToListComponent implements OnInit {
     }
   }
 
-  getArrayText(item: any, index: number): string {
+  getArrayText(item: any): string {
     if (this.hasSub(item)) {
-      return index + ' [' + Object.keys(item).length + ']';
+      return ' [' + Object.keys(item).length + ']';
     } else {
       return item.toString();
     }

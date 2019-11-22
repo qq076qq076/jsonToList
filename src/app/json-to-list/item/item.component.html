@@ -5,9 +5,17 @@
   <div
     class="arrow"
     [ngClass]="{active: openSub}"
+    [style.border-left-color]="textColor"
     *ngIf="hasSub"
   ></div>
-  {{text}}
+  <span
+    class="title"
+    [style.color]="titleColor"
+  >{{title}}</span>
+  <span
+    class="text"
+    [style.color]="textColor"
+  >：{{text}}</span>
 </div>
 <div
   class="container"
@@ -15,6 +23,8 @@
   [ngStyle]="{'padding-left': tabWidth}"
 >
   <app-json-to-list
+    [titleColor]="titleColor"
+    [textColor]="textColor"
     [json]="subData"
     [tabWidth]="tabWidth"
   >

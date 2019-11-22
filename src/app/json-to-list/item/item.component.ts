@@ -12,7 +12,10 @@ export class ItemComponent {
     private changeDetectorRef: ChangeDetectorRef,
   ) { }
 
+  @Input() title: string;
+  @Input() titleColor: string;
   @Input() text: string;
+  @Input() textColor: string;
   @Input() hasSub: boolean;
   @Input() subData: any;
   @Input() tabWidth: string;
